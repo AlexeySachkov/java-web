@@ -28,6 +28,13 @@
                                 <p>All boxes: </p>
                             </c:otherwise>
                         </c:choose>
+                        <div>
+                            <form action="/" method="GET">
+                                <input type="checkbox" name="depthFilter" <c:if test="${depthFilter}">checked</c:if> />
+                                <input type="number" name="depthFilterMin" value="<c:out value="${filterDepthMin}"></c:out>" />
+                                <input type="submit" value="refresh" />
+                            </form>
+                        </div>
                         <table class="table table-hover table-border">
                             <thead>
                                 <tr>
@@ -42,7 +49,7 @@
                                 <c:forEach items="${boxes}" var="box">
                                     <tr>
                                         <td><c:out value="${box.getId()}"></c:out></td>
-                                        <td><c:out value="${box.getWidth()}"></c:out></td>
+                                            <td><c:out value="${box.getWidth()}"></c:out></td>
                                         <td><c:out value="${box.getDepth()}"></c:out></td>
                                         <td><c:out value="${box.getHeight()}"></c:out></td>
                                         <td>

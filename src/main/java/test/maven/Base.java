@@ -22,7 +22,7 @@ public class Base extends HttpServlet {
         return this.connection.createStatement().executeQuery(sql);
     }
 
-    public void doSqlUpdate(String sql) throws SQLException {
-        this.connection.createStatement().executeUpdate(sql);
+    public int doSqlUpdate(String sql) throws SQLException {
+        return this.connection.createStatement().executeUpdate(sql);
     }
 }

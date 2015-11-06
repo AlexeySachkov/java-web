@@ -31,6 +31,14 @@ public class Index extends Base {
 
         try {
             String sql = "SELECT id, width, height, depth FROM boxes";
+
+            if (request.getParameter("depthFilter") != null && request.getParameter("depthFilterMin") != null) {
+                Integer depthFilterMin = Integer.parseInt(request.getParameter("depthFilterMin"));
+
+                sql = sql.concat(" WHERE depth >= "+depthFilterMin);
+            }
+
+
             Integer limit = 10;
             if (request.getParameter("limit") != null) {
                 limit = Integer.parseInt(request.getParameter("limit"));

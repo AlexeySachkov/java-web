@@ -35,7 +35,7 @@
                 <div class="form-group">
                     <label for="box-depth" class="control-label col-sm-3">Depth</label>
                     <div class="col-sm-9">
-                        <input type="number" min="1" id="box-depth" name="depth" value="10" class="form-control" required />
+                        <input type="number" min="5" max="10" id="box-depth" name="depth" value="10" class="form-control" required />
                     </div>
                 </div>
                 <hr />
