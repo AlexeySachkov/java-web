@@ -24,4 +24,14 @@
         <url-pattern>/single</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>addServlet</servlet-name>
+        <servlet-class>test.maven.Add</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>addServlet</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+
 </web-app>
