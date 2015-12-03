@@ -11,7 +11,6 @@ import java.sql.SQLException;
  */
 public class Add extends Base {
 
-
     public Add() throws ClassNotFoundException, SQLException {
     }
 
@@ -43,6 +42,8 @@ public class Add extends Base {
                     response.sendRedirect("/");
                 } catch (SQLException e) {
                     response.sendRedirect("/add?msg=error");
+                    e.printStackTrace();
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }

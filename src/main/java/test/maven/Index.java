@@ -27,6 +27,8 @@ public class Index extends Base {
             request.setAttribute("boxCount", res.getInt(1));
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
         try {
@@ -55,6 +57,8 @@ public class Index extends Base {
             request.setAttribute("boxes", boxes);
             request.setAttribute("boxesNum", limit);
         } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

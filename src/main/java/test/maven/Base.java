@@ -1,8 +1,6 @@
 package test.maven;
 
 import javax.servlet.http.HttpServlet;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -11,18 +9,17 @@ import java.sql.SQLException;
  */
 public class Base extends HttpServlet {
 
-    protected Connection connection;
+    protected Database databaseConnection;
 
     public Base() throws ClassNotFoundException, SQLException {
-        Class.forName("com.mysql.jdbc.Driver");
-        this.connection = DriverManager.getConnection("jdbc:mysql://localhost/java_db","java_db_user","123456");
+        this.databaseConnection = Database.getInstance();
     }
 
-    public ResultSet doSqlQuery(String sql) throws SQLException {
-        return this.connection.createStatement().executeQuery(sql);
+    public ResultSet doSqlQuery(String sql) throws Exception {
+        return this.databaseConnection.doSqlQuery(sql);
     }
 
-    public int doSqlUpdate(String sql) throws SQLException {
-        return this.connection.createStatement().executeUpdate(sql);
+    public int doSqlUpdate(String sql) throws Exception {
+        return this.databaseConnection.doSqlUpdate(sql);
     }
 }
