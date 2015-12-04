@@ -29,6 +29,8 @@ public class Delete extends Base {
             } catch (SQLException e) {
                 response.sendRedirect("/?msg=error");
                 e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
 
             request.getRequestDispatcher("delete.jsp").forward(request, response);
@@ -45,6 +47,8 @@ public class Delete extends Base {
                 this.doSqlUpdate("DELETE FROM boxes WHERE id = "+id);
             } catch (SQLException e) {
                 response.sendRedirect("/single?id="+id+"&msg=error");
+                e.printStackTrace();
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 

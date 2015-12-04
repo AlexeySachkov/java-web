@@ -37,6 +37,8 @@ public class Single extends Base {
             } catch (SQLException e) {
                 response.sendRedirect("/?msg=error");
                 e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
 
             request.getRequestDispatcher("single.jsp").forward(request, response);
@@ -62,6 +64,8 @@ public class Single extends Base {
                 this.doSqlUpdate(sql);
             } catch (SQLException e) {
                 response.sendRedirect("/single?id="+id+"&msg=error");
+                e.printStackTrace();
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
