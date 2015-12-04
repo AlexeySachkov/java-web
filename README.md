@@ -1,9 +1,3 @@
 # java-web
 
-Repo for labs
-
-## Roadmap
-
-* create Singleton for database connection
-* may be add some javascript
-* refactor filters on main page
+Simple catalogue of boxes. Allow add, edit and delete boxes.
